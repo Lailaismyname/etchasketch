@@ -1,0 +1,18 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#sketchBox{
+    background: purple;
+    width: 300px;
+}
+.regel{
+    display: flex;
+}
+.box{
+    border: 2px solid black;
+    background:green;
+    width: 20px;
+    height: 20px;
+}
