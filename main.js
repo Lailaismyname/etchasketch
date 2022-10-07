@@ -1,7 +1,7 @@
 window.addEventListener('load', ()=>{
     let evenement = 'mouseover';
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-        evenement = 'touchmove';
+        evenement = 'touchstart';
         console.log('tel');
     }
     else{
@@ -62,12 +62,14 @@ window.addEventListener('load', ()=>{
                 else if(event.target.id == 'white'){
                     color = 'white';
                 }
+                else if(event.target.id == 'eraser'){
+                    color = '#757575';
+                }
                 else{
                     color = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
                 }
             })
         })
 })
-
 
 //extra als het op mobiel is dan tekenen met onclick want hover bestaat niet volgens mij? eerst ff testen wat t doet?
