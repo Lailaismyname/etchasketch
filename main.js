@@ -1,27 +1,64 @@
 window.addEventListener('load', ()=>{
     //TODO: 
     const sketchBox = document.querySelector('#sketchBox');
-        //met js een grid van 16*16 blokken maken, hier start de pagina ook mee
+    const box = document.querySelectorAll('box');
+    const okBtn = document.querySelector('#okBtn');
+    const colorBtn = document.querySelectorAll('.colorBtn');
+    let color = '#ABF1C8';
+        //functie die grid maakt
         function makeGrid(size){
-            size = 16;
+            size = size;
             for(let i = 0; i < (size*size); i++){
                 const box = document.createElement('div');
                 box.classList.add('box');
-                box.textContent = i;
-                box.id = `box${i}`;         //heeft dit een id nodig? laten staan want is handig om te weten
+                box.id = `box${i}`;         //heeft dit een id nodig? laten staan want is handig om te weten voor in de toekomst
                 sketchBox.appendChild(box);
-                //console.log(sketchBox.childNodes);
+                sketchBox.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
             }
         }
-        makeGrid(16);
-                        //OKE PROGRESS! HOE ZORG IK ERVOOR DAT ER 16 DIVS OP 1 RIJ BLIJVEN STAAN?
+        //functie die random nummer teruggeeft
+        function randomNumber(){
+            let ranNum = Math.random() * (255 - 0) + 1;
+            return Math.trunc(ranNum);
+        }
+
+        //bij start maak grid van 16*16
+        makeGrid(16);       
 
         // onhover moet de achtergrondkleur van het blokje veranderen 
+        sketchBox.addEventListener('mouseover', (event)=>{
+                if(event.target.classList.contains('box')){
+                    event.target.style.background = color;
+                }
+            });
 
-        // als er op knop word gedrukt, 
-        //word de grid zo groot als de user invoert. en de vorige grid word vervangen met de nieuwe. max. 100
-        
-        //
+        // als er op gridsize knop word gedrukt, 
+        okBtn.addEventListener('click', (event)=>{
+            //pak waarde
+            let gridSize = document.querySelector('#gridInput').value;
+            //empty de sketchbox
+            sketchBox.innerHTML = '';
+            //maak nieuwe grid
+            makeGrid(gridSize);
+        })
 
-
+        //als er een kleur geselecteerd is, wijs nieuwe kleur aan color toe. 
+        colorBtn.forEach(item =>{
+            item.addEventListener('click', (event)=>{
+                console.log(event.target.id);
+                if(event.target.id == 'black'){
+                    color = 'black';
+                }
+                else if(event.target.id == 'white'){
+                    color = 'white';
+                }
+                else{
+                    color = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
+                    console.log(color);
+                }
+            })
+        })
 })
+
+
+//extra als het op mobiel is dan tekenen met onclick want hover bestaat niet volgens mij? eerst ff testen wat t doet?

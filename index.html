@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +13,22 @@
 </head>
 <body>
     <main id="mainWrapper">
-        <h1 class="title">Etch a sketch</h1>
+        <div class="titleWrapper">
+            <h1 class="title">Etch a sketch</h1>
+        </div>
+        <section id="interface">
+            <section>
+                <label for="gridInput">Grid size</label>
+                <input name="gridInput" id="gridInput" type="number" min="1" max="100" placeholder="16" class="gridInput">
+                <button class="color" id="okBtn">ok</button>
+            </section>
+            <section>
+                <label for="buttons">Pick a color</label><br>
+                <button name='buttons' class="colorBtn color" id="black">Black</button>
+                <button name='buttons' class="colorBtn color" id="white">White</button>
+                <button name='buttons' class="colorBtn color" id="random">Random</button>
+            </section>
+        </section>
         
         <section id="sketchBox">              
         </section>
