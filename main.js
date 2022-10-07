@@ -1,5 +1,13 @@
 window.addEventListener('load', ()=>{
     let evenement = 'mouseover';
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        evenement = 'touchmove';
+        console.log('tel');
+    }
+    else{
+        evenement = 'mouseover';
+        console.log('pc');
+    }
     
     //TODO: 
     const sketchBox = document.querySelector('#sketchBox');
@@ -56,14 +64,6 @@ window.addEventListener('load', ()=>{
                 }
                 else{
                     color = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
-                    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-                        //evenement = 'touchstart';
-                        console.log('tel');
-                    }
-                    else{
-                        //evenement = 'mouseover';
-                        console.log('pc');
-                    }
                 }
             })
         })

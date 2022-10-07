@@ -51,16 +51,14 @@ button{
     cursor: pointer;
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TITEL ANIMATIE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* https://techstacker.com/gradient-text-color-css/     NOG EEN KEER LEZEN! */
 .titleWrapper{
-    height:150px;
+    height:100px;
 }
 .title{ 
     background: linear-gradient(to right, #EE9ACC, #ABF1C8,#EE9ACC,#333,#333,#333,#333,#333,#333,#333,#333,#333,#333);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     height: 50;
-    /*border: 2px solid black;             deze later weg*/
     padding:0px 5px;
     margin: 40px;
     text-align: center;
@@ -121,3 +119,26 @@ button{
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MEDIA QUERIES~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media screen and (max-width: 599px) {
+    #sketchBox{
+        width:80vw;
+        height:80vw;
+        border: 5px solid #333;
+        padding: 0px;
+    }
+    body{
+        overflow: hidden;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    #sketchBox{
+        width:500px;
+        height:500px;
+    }
+  }
+  @media screen and (min-width: 899px) {
+    #sketchBox{
+        width:700px;
+        height:700px;
+    }
+  }
