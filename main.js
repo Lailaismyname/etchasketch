@@ -1,4 +1,6 @@
 window.addEventListener('load', ()=>{
+    let evenement = 'mouseover';
+    
     //TODO: 
     const sketchBox = document.querySelector('#sketchBox');
     const box = document.querySelectorAll('box');
@@ -26,7 +28,7 @@ window.addEventListener('load', ()=>{
         makeGrid(16);       
 
         // onhover moet de achtergrondkleur van het blokje veranderen 
-        sketchBox.addEventListener('mouseover', (event)=>{
+        sketchBox.addEventListener(evenement, (event)=>{
                 if(event.target.classList.contains('box')){
                     event.target.style.background = color;
                 }
@@ -45,7 +47,7 @@ window.addEventListener('load', ()=>{
         //als er een kleur geselecteerd is, wijs nieuwe kleur aan color toe. 
         colorBtn.forEach(item =>{
             item.addEventListener('click', (event)=>{
-                console.log(event.target.id);
+                console.log(navigator.platform);
                 if(event.target.id == 'black'){
                     color = 'black';
                 }
@@ -54,7 +56,14 @@ window.addEventListener('load', ()=>{
                 }
                 else{
                     color = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
-                    console.log(color);
+                    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+                        //evenement = 'touchstart';
+                        console.log('tel');
+                    }
+                    else{
+                        //evenement = 'mouseover';
+                        console.log('pc');
+                    }
                 }
             })
         })
