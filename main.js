@@ -1,7 +1,7 @@
 window.addEventListener('load', ()=>{
     let evenement = 'mouseover';
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-        evenement = 'touchstart';
+        evenement = 'mousedown';
         console.log('tel');
     }
     else{
