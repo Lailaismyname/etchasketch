@@ -1,5 +1,5 @@
 # etchasketch
-Etch a sketch is a well known children's toy that lets you draw on a canvas. 
+Etch a sketch is a well known children's toy that lets you draw on a canvas.  <br>
 Live version <a href="https://lailaismyname.github.io/etchasketch/">Here</a>. 
 
 Tech used:<br>
