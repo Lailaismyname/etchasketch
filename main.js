@@ -8,8 +8,6 @@ window.addEventListener('load', ()=>{
         evenement = 'mouseover';
         console.log('pc');
     }
-    
-    //TODO: 
     const sketchBox = document.querySelector('#sketchBox');
     const box = document.querySelectorAll('box');
     const okBtn = document.querySelector('#okBtn');
@@ -36,7 +34,6 @@ window.addEventListener('load', ()=>{
                 }
             });
         okBtn.addEventListener('click', (event)=>{
-            //pak waarde
             let gridSize = document.querySelector('#gridInput').value;
             sketchBox.innerHTML = '';
             makeGrid(gridSize);
