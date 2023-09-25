@@ -1,5 +1,6 @@
 # etchasketch
-This is a <a href="https://lailaismyname.github.io/etchasketch/">Etch a Sketch</a> that i made. 
+Etch a sketch is a well known children's toy that lets you draw on a canvas. 
+Live version <a href="https://lailaismyname.github.io/etchasketch/">Here</a>. 
 
 Tech used:<br>
 Html, css and Javascript
